@@ -44,10 +44,8 @@ jobs:
           nodetail: true
       - name: Slack Notification sended
         uses: slackapi/slack-github-action@v1.18.0
-        if: ${{ success() }}Slack Info Si3 QGL
+        if: ${{ success() }}
         with:
          channel-id: 'si3-qgl-21-22-kihm'
           # For posting a simple plain text message
          slack-message: "Message Test ! Désolé pour le derangement \nTag posé, les rapports sont dans l'artefact"
-        env:
-          SLACK_BOT_TOKEN: xoxb-744038435863-3300487232753-uBKaZgdZzY99yxK5ztx9J6Cg
