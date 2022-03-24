@@ -50,4 +50,4 @@ jobs:
           # For posting a simple plain text message
          slack-message: "Message Test ! Désolé pour le derangement \nTag posé, les rapports sont dans l'artefact"
         env:
-          SLACK_BOT_TOKEN: xoxb-744038435863-3300487232753-oBnLxLhiIT1W3MCnIJc12ceP
+          SLACK_BOT_TOKEN: 'xoxb-744038435863-3300487232753-yhdoAf0Lb81EvuKGoV28q73W'
