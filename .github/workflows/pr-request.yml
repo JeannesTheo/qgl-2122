@@ -1,0 +1,20 @@
+name: PR request
+on:
+  pull_request:
+    types: [ review_requested ]
+
+jobs:
+  notify:
+    name: Request Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Review Pull request
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: "https://discordapp.com/api/webhooks/956068061100789801/SB4rQKVAuiGBeeT3ptjPc6zY-AzeUQG_FaKYDdvdU7M_0CitvtDgs8UIvhiB9gQ5w6KX"
+          title: "Quelqu'un a du travail !"
+          description: "${{ github.event.requested_reviewer.login}} a quelque chose à regarder ici : ${{ github.event.pull_request.html_url }}"
+          nodetail: true
+          color: 0xff91a4
