@@ -30,7 +30,7 @@ jobs:
         with:
           webhook: "https://discordapp.com/api/webhooks/956068061100789801/SB4rQKVAuiGBeeT3ptjPc6zY-AzeUQG_FaKYDdvdU7M_0CitvtDgs8UIvhiB9gQ5w6KX"
           title: "Rendu QGL"
-          description: "All good, le tag est posé (${{ github.event.push.ref }}) ! Les rapports sont dans l'artefact"
+          description: "All good, le tag est posé (${{ github.event.push }}) ! Les rapports sont dans l'artefact"
           color: 0xff91a4
           nodetail: true
       - name: Discord Notification Delivered
