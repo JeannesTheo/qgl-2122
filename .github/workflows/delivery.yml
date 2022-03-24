@@ -16,14 +16,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.17
-      - name: Run Mutation Testing
-        run: mvn verify -Ppit
-      - name: Publish Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: resulats PIT
-          path: reports/pit
-          if-no-files-found: error
+#       - name: Run Mutation Testing
+#         run: mvn verify -Ppit
+#       - name: Publish Artifact
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: resulats PIT
+#           path: reports/pit
+#           if-no-files-found: error
       - name: Discord Notification Delivered
         uses: sarisia/actions-status-discord@v1
         if: ${{ success() }}
@@ -49,3 +49,5 @@ jobs:
          channel-id: 'si3-qgl-21-22-kihm'
           # For posting a simple plain text message
          slack-message: "Message Test ! Désolé pour le derangement \nTag posé, les rapports sont dans l'artefact"
+        env:
+          SLACK_BOT_TOKEN: xoxb-744038435863-3300487232753-oBnLxLhiIT1W3MCnIJc12ceP
