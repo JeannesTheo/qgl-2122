@@ -29,6 +29,16 @@ jobs:
         with:
           webhook: "https://discordapp.com/api/webhooks/956068061100789801/SB4rQKVAuiGBeeT3ptjPc6zY-AzeUQG_FaKYDdvdU7M_0CitvtDgs8UIvhiB9gQ5w6KX"
           title: "Rendu QGL"
-          description: "All good, le tag est posé ! Les rapports sont dans l'artefact    ${{ github.server_url }}    ${{ github.api_url }}     ${{ github.event_path }}"
+          description: "All good, le tag est posé ! Les rapports sont dans l'artefact"
           color: 0xff91a4
           nodetail: true
+      - name: Slack Notification sended
+        uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # Slack channel id, channel name, or user id to post message.
+          # See also: https://api.slack.com/methods/chat.postMessage#channels
+          channel-id: 'si3-qgl-21-22-kihm'
+          # For posting a simple plain text message
+          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        env:
+          SLACK_BOT_TOKEN: xoxb-744038435863-3300487232753-uBKaZgdZzY99yxK5ztx9J6Cg
