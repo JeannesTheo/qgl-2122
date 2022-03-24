@@ -30,7 +30,7 @@ jobs:
         with:
           webhook: "https://discordapp.com/api/webhooks/956068061100789801/SB4rQKVAuiGBeeT3ptjPc6zY-AzeUQG_FaKYDdvdU7M_0CitvtDgs8UIvhiB9gQ5w6KX"
           title: "Rendu QGL"
-          description: "All good, le tag est posé ! Les rapports sont dans l'artefact"
+          description: "All good, le tag est posé (${{ github.event.push.ref }}) ! Les rapports sont dans l'artefact"
           color: 0xff91a4
           nodetail: true
       - name: Discord Notification Delivered
@@ -42,12 +42,12 @@ jobs:
           description: "C'est la merde, il y a un probleme sur les tests ! Les rapports sont dans l'artefact"
           color: 0xff91a4
           nodetail: true
-      - name: Slack Notification sended
-        uses: slackapi/slack-github-action@v1.18.0
-        if: ${{ success() }}
-        with:
-         channel-id: 'si3-qgl-21-22-kihm'
-          # For posting a simple plain text message
-         slack-message: "Message Test ! Désolé pour le derangement \nTag posé, les rapports sont dans l'artefact"
-    env:
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+#       - name: Slack Notification sended
+#         uses: slackapi/slack-github-action@v1.18.0
+#         if: ${{ success() }}
+#         with:
+#          channel-id: 'si3-qgl-21-22-kihm'
+#           # For posting a simple plain text message
+#          slack-message: "Tag posé, les rapports sont dans l'artefact"
+#     env:
+#       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
