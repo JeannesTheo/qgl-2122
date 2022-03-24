@@ -49,5 +49,5 @@ jobs:
          channel-id: 'si3-qgl-21-22-kihm'
           # For posting a simple plain text message
          slack-message: "Message Test ! Désolé pour le derangement \nTag posé, les rapports sont dans l'artefact"
-        env:
-          SLACK_BOT_TOKEN: ''
+    env:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
