@@ -1,6 +1,8 @@
 name: PR closed
 
 on:
+  pull_request:
+    types: [review_request_removed,edited,synchronize]
   pull_request_review:
     types: [subitted, edited]
   check_suite:
