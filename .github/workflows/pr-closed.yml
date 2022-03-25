@@ -27,7 +27,8 @@ jobs:
           MERGE_DELETE_BRANCH: true
           MERGE_ERROR_FAIL: true
           UPDATE_LABELS: ""      
-      - name: Close involved issue
+      - name: Close involved issue  
         uses: Logerfo/close-action@0.0.1
-        env:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+        with:
+         github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
+         comment: true # If `true`, will comment on the closing issue(s).
