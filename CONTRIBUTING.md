@@ -2,7 +2,6 @@
 
 ### Table of Contents
 
-* [Branching Aspects](#Branching Aspects)
 * [Issue Lifecycle](#issue-lifecycle)
   [Submit a Pull Request](#submit-a-pull-request)
 * [Releases](#releases)
