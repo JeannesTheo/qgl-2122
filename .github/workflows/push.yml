@@ -13,5 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.17
-    - name: Maven build
-      run: mvn clean package
+#     - name: Maven build
+#       run: mvn clean package
