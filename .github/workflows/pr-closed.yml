@@ -29,4 +29,5 @@ jobs:
           UPDATE_LABELS: ""      
       - name: Close involved issue
         uses: Logerfo/close-action@0.0.1
-        
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
