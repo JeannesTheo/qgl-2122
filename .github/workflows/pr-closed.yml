@@ -24,7 +24,7 @@ jobs:
           MERGE_COMMIT_MESSAGE: "Auto merge {pullRequest.number}, close #${{github.event.pull_request.issue}}"
           MERGE_FORKS: false
           MERGE_RETRY_SLEEP: "10000"
-          MERGE_REQUIRED_APPROVALS: 2
+          MERGE_REQUIRED_APPROVALS: 0
           MERGE_DELETE_BRANCH: true
           MERGE_ERROR_FAIL: true
           UPDATE_LABELS: ""
