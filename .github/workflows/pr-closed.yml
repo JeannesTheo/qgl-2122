@@ -21,7 +21,7 @@ jobs:
           MERGE_LABELS: "!wait"
           MERGE_REMOVE_LABELS: "wait"
           MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "Auto merge {pullRequest.number}"
+          MERGE_COMMIT_MESSAGE: "Auto merge Pull request {pullRequest.number}"
           MERGE_FORKS: false
           MERGE_RETRY_SLEEP: "10000"
           MERGE_REQUIRED_APPROVALS: 0
@@ -30,6 +30,7 @@ jobs:
           UPDATE_LABELS: ""      
       - name: Close involved issue  
         uses: Logerfo/close-action@0.0.1
+        if : steps.automerge.outputs.mergeResult == "merged"
         with:
          github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
          comment: true # If `true`, will comment on the closing issue(s).
