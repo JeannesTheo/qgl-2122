@@ -30,7 +30,7 @@ jobs:
           UPDATE_LABELS: ""      
       - name: Close involved issue  
         uses: Logerfo/close-action@0.0.1
-        if: steps.automerge.outputs.mergeResult == "merged"
+        if: ${{steps.automerge.outputs.mergeResult == "merged" }}
         with:
          github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
          comment: true # If `true`, will comment on the closing issue(s).
