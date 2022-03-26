@@ -10,7 +10,7 @@ on:
 jobs:
     build:
       runs-on: ubuntu-latest
-      name: Delivery
+      name: Clean Project
       steps:
       - id: automerge
         name: Merge pull request
@@ -28,7 +28,8 @@ jobs:
           MERGE_DELETE_BRANCH: true
           MERGE_ERROR_FAIL: true
           UPDATE_LABELS: ""      
-      - name: Close involved issue  
+      - name: Close involved issue
+        if : steps.automerge.outputs.mergeResult == 'merged'
         uses: Logerfo/close-action@0.0.1
         with:
          github-token: ${{ secrets.GITHUB_TOKEN }} # The `GITHUB_TOKEN` secret.
